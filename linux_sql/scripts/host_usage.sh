@@ -32,7 +32,7 @@ host_id="(SELECT id FROM host_info WHERE hostname='$hostname')";
 
 # insert usage data into table
 insert_stmt="INSERT INTO host_usage(timestamp, host_id, memory_free, cpu_idle, cpu_kernel, disk_io, disk_available)
-  VALUES('$timestamp', $host_id, '$memory_free', '$cpu_idle', '$cpu_kernel', '$disk_io', '$disk_available')";
+  VALUES('$timestamp', $host_id, $memory_free, $cpu_idle, $cpu_kernel, $disk_io, $disk_available)";
 
 # set up env var for psql cmd
 export PGPASSWORD=$psql_password
