@@ -200,3 +200,187 @@ ORDER BY
     member,
     recommender;
 
+
+-- Aggregation
+
+-- Exercise 17 count 3
+
+SELECT
+    recommendedby,
+    COUNT (*) as count
+FROM
+    cd.members
+WHERE
+    recommendedby IS NOT NULL
+GROUP BY
+    recommendedby
+ORDER BY
+    recommendedby;
+
+-- Exercise 18 fachours
+
+SELECT
+    f.facid,
+    SUM(slots) AS "Total Slots"
+FROM
+    cd.facilities f
+        LEFT JOIN cd.bookings b on f.facid = b.facid
+GROUP BY
+    f.facid
+ORDER BY
+    f.facid;
+
+-- Exercise 19 facours by month
+
+SELECT
+    f.facid,
+    SUM (slots) AS "Total Slots"
+FROM
+    cd.facilities f
+        LEFT JOIN cd.bookings b ON f.facid = b.facid
+WHERE
+    starttime >= '2012-09-01'
+  AND starttime < '2012-10-01'
+GROUP BY
+    f.facid
+ORDER BY
+    "Total Slots";
+
+-- Exercise 20 fachours by month 2
+
+SELECT
+    facid,
+    EXTRACT (
+            MONTH
+            FROM
+            starttime
+    ) AS month,
+  SUM(slots) AS "Total Slots"
+FROM
+    cd.bookings
+WHERE
+    EXTRACT (
+    YEAR
+    FROM
+    starttime
+    ) = '2012'
+GROUP BY
+    facid,
+    EXTRACT (
+    MONTH
+    FROM
+    starttime
+    )
+ORDER BY
+    facid,
+    month;
+
+-- Exercise 21 members 1
+
+SELECT
+    COUNT(DISTINCT memid)
+FROM
+    cd.bookings;
+
+-- Exercise 22 n booking
+
+SELECT
+    surname,
+    firstname,
+    member.memid,
+    starttime
+FROM
+    cd.members member
+        JOIN (
+        SELECT
+            cd.bookings.memid,
+            MIN(starttime) as starttime
+        FROM
+            cd.bookings
+        WHERE
+            starttime >= '2012-09-01'
+        GROUP BY
+            cd.bookings.memid
+    ) booking ON member.memid = booking.memid
+ORDER BY
+    member.memid;
+
+-- Exercise 23 count members
+
+SELECT
+    COUNT (*) OVER () as COUNT,
+  firstname,
+  surname
+FROM
+    cd.members
+ORDER BY
+    joindate;
+
+-- Exercise 24 num members
+
+SELECT
+    COUNT (*) OVER (
+    ORDER BY
+      joindate
+  ),
+        firstname,
+    surname
+FROM
+    cd.members
+ORDER BY
+    joindate;
+
+-- Exercise 25 fachours 4
+
+SELECT
+    facid,
+    total
+FROM
+    (
+        SELECT
+            facid,
+            SUM(slots) AS total,
+            RANK () OVER(
+        ORDER BY
+          SUM(slots) DESC
+      ) as rank
+        FROM
+            cd.bookings
+        GROUP BY
+            facid
+    ) as sub
+WHERE
+    rank = 1;
+
+-- String
+
+-- Exercise 26 concat
+
+SELECT
+    CONCAT(surname, ', ', firstname)
+FROM
+    cd.members;
+
+-- Exercise 27 reg
+
+SELECT
+    memid,
+    telephone
+FROM
+    cd.members
+WHERE
+    telephone ~ '[()]'
+ORDER BY
+    memid;
+
+-- Exercise 28 substr
+
+SELECT
+    SUBSTR (surname, 1, 1) as letter,
+    COUNT (*)
+FROM
+    cd.members
+GROUP BY
+    letter
+ORDER BY
+    letter;
