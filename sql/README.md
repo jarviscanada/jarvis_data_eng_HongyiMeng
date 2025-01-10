@@ -3,6 +3,7 @@
 This project is a practical exercise to get more familiarity with SQL operations. First, we explored
 how to create tables in SQL. Then, we dug into how to perform CRUD operations in an SQL database.
 
+This project was realized using Docker and PostgreSQL.
 # SQL Queries
 
 ###### Table Setup (DDL)
