@@ -109,7 +109,7 @@ public class JavaGrepImpl implements JavaGrep {
         this.outFile = outFile;
     }
 
-    private void listFilesHelper(String rootDir, List<File> files) {
+    protected void listFilesHelper(String rootDir, List<File> files) {
         File dir = new File(rootDir);
 
         File[] dirFiles = dir.listFiles();
