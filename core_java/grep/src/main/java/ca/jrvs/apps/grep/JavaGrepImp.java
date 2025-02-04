@@ -9,9 +9,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class JavaGrepImpl implements JavaGrep {
+public class JavaGrepImp implements JavaGrep {
 
-    private static final Logger logger = LoggerFactory.getLogger(JavaGrepImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(JavaGrepImp.class);
     private String regex;
     private String rootPath;
     private String outFile;
@@ -127,7 +127,7 @@ public class JavaGrepImpl implements JavaGrep {
     public static void main(String[] args) {
         logger.debug("Program called with arguments {}", Arrays.toString(args));
 
-        JavaGrepImpl app = new JavaGrepImpl();
+        JavaGrepImp app = new JavaGrepImp();
         app.setRegex(args[0]);
         app.setRootPath(args[1]);
         app.setOutFile(args[2]);

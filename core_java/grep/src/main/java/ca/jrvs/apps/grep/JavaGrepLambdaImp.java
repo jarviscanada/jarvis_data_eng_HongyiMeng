@@ -8,9 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class JavaGrepLambdaStreamImpl extends JavaGrepImpl {
+public class JavaGrepLambdaImp extends JavaGrepImp {
 
-    private static final Logger logger = LoggerFactory.getLogger(JavaGrepLambdaStreamImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(JavaGrepLambdaImp.class);
 
     @Override
     public void process() throws IOException {
@@ -63,7 +63,7 @@ public class JavaGrepLambdaStreamImpl extends JavaGrepImpl {
     public static void main(String[] args) {
         logger.debug("Grep App (Lambda/Stream) called with arguments {}", Arrays.toString(args));
 
-        JavaGrepLambdaStreamImpl app = new JavaGrepLambdaStreamImpl();
+        JavaGrepLambdaImp app = new JavaGrepLambdaImp();
         app.setRegex(args[0]);
         app.setRootPath(args[1]);
         app.setOutFile(args[2]);
