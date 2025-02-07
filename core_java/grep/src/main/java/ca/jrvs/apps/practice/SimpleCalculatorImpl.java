@@ -22,4 +22,19 @@ public class SimpleCalculatorImpl implements SimpleCalculator {
         return 1.0 * x / y;
     }
 
+    @Override
+    public int power(int x, int y) {
+        return (int) Math.pow(x, y);
+    }
+
+    @Override
+    public int abs(int x) {
+        return Math.abs(x);
+    }
+
+    @Override
+    public double sqrt(int x) {
+        return Math.sqrt(x);
+    }
+
 }
