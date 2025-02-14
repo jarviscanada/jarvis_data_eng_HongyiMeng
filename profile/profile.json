@@ -1,48 +1,58 @@
 {
   "education": [
     {
-      "awards_achievements": [
-        "Scholarship",
-        "Dean's List (2015, 2016): Ut enim ad minim veniam",
-        "GPA: 3.8/4.0"
-      ],
-      "degree": "Bachelor of Applied Sciences",
+      "awards_achievements": null,
+      "degree": "B. Eng. Software Engineering",
       "department": "Electrical and Computer Engineering",
-      "duration": "2012-2016",
-      "school_name": "XYZ university"
+      "duration": "2020-2024",
+      "school_name": "McGill University"
     },
     {
       "awards_achievements": null,
-      "degree": "Master of Engineering",
-      "department": "Electrical and Computer Engineering",
-      "duration": "2016-2018",
-      "school_name": "XYZ university"
+      "degree": "DEC in Computer Science and Mathematics",
+      "department": "Computer Science",
+      "duration": "2018-2020",
+      "school_name": "Vanier College"
     }
   ],
-  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_demo",
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng",
   "highlighted_projects": [
     {
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
-      "git_url": "https://github.com/jarviscanada/jarvis_profile_builder",
-      "name": "Web app for resturant"
+      "description": "Designed and implemented a full-stack application that analyzes research papers from a database to identify similarities and connect researchers working on related topics. Gathered requirements from stakeholders, designed the system architecture and implemented the backend in Python, leveraging a pre-trained BERT model for topic classification. Integrated a RESTful API for seamless search functionality, allowing researchers to efficiently discover relevant work. Assisted in creating a graph to display author relationships visually in the Angular webapp. Worked in an agile/scrum environment, actively participating in sprint planning, daily stand-ups, backlog refinement and retrospectives.",
+      "git_url": null,
+      "name": "KnowKnot"
     },
     {
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
+      "description": "Designed and implemented a Library Management System using Java and Spring Boot, enabling efficient book cataloging, user management, and loan tracking. Developed a RESTful API for seamless interactions between the frontend and backend. Integrated a relational database to keep record of the library's collections. Created a web-based view for catalog searching and user management, as well as an Android app for easy access.",
       "git_url": null,
-      "name": "Machine Learning"
+      "name": "Library Management System"
+    },
+    {
+      "description": "Developed an compiler for a subset of C, written in Java. Compiles C code into MIPS assembly. Parsed C code into tokens following specifications from a grammar, analyzing program structure to ensure program validity. Implemented efficient register allocation using inference graphs and graph coloring algorithms.",
+      "git_url": null,
+      "name": "Mini C Compiler"
+    },
+    {
+      "description": "Designed and programmed a Lego Mindstorms robot capable of sorting colored cubes by their color. Implemented an algorithm to identify the most likely color, using data from various sensors, with a 98% accuracy.",
+      "git_url": null,
+      "name": "Colored Cube Sorting Robot"
     }
   ],
   "jarvis_projects": [
     {
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
+      "description": "Authored bash scripts to collect system specification and real-time resource usage of Linux machines, using Grep, Awk, and Sed. Collected data are stored in a PostgreSQL Docker container instance.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
     },
     {
+      "description": "Designed SQL statements to perform various operations and queries over a SQL database, including queries leveraging joins, aggregate functions, and window functions.",
+      "git_url": "/sql",
+      "name": "RDBMS and SQL"
+    },
+    {
       "description": [
-        "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
-        "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
-        "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+        "JDBC App: Created a Java application that interacts with data stored in a RDBMS using JDBC and DAO/DTO.",
+        "Grep App: Developed a Java program to efficiently search for patterns in large text files using regular expressions. Implemented file I/O operations, using buffered readers to ensure minimal memory usage. Applied best practices in exception handling and logging. Packaged the application using Maven and distributed it as a Docker image."
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
@@ -77,21 +87,8 @@
   "others": [
     {
       "bullets": [
-        "Udacity Machine Learning (2019)"
-      ],
-      "title": "Certificates"
-    },
-    {
-      "bullets": [
-        "Winner"
-      ],
-      "title": "Awards"
-    },
-    {
-      "bullets": [
-        "Basketball player",
-        "Competitive gaming",
-        "Volunteer, ABC Food bank: Ut enim ad minim veniam"
+        "Runner",
+        "Volunteer, Atwater Library and Computer Centre: computer centre volunteer"
       ],
       "title": "Activities/Hobbies"
     }
@@ -99,39 +96,45 @@
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
-      "duration": "2020-present",
+      "description": "Implemented solutions for a variety of problems using Java, Maven, bash programming, SQL, using tools such as Docker and git. Created thorough unit tests with JUnit and Mockito to ensure program correctness.",
+      "duration": "2024-present",
       "title": "Software Developer"
     },
     {
-      "company": "XYZ Company",
-      "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
-      "duration": "2019",
-      "title": "Tutor"
+      "company": "Flexspring",
+      "description": "Contributed to a client-facing application for the management of various company subscription services. Implemented a new feature for users to archive no longer needed subscriptions. Assisted in the migration of user data from a MongoDB database to a PostgreSQL database. Created a proof of concept for subscription creation designed for scalability.",
+      "duration": "2023",
+      "title": "R\u0026D Software Developer Intern"
     }
   ],
   "skills": {
     "competent": [
-      "Donec",
-      "fermentum",
-      "Donec",
-      "fermentum",
-      "Donec"
+      "Python",
+      "Django",
+      "JavaScript/TypeScript",
+      "React.js",
+      "C/C++",
+      "Selenium"
     ],
     "familiar": [
-      "Donec",
-      "fermentum",
-      "fermentum",
-      "fermentum",
-      "fermentum"
+      "Jenkins",
+      "Angular",
+      "Android SDK",
+      "Redis",
+      "ActiveMQ",
+      "Swagger API",
+      "Hashicorp Vault"
     ],
     "proficient": [
       "Java",
-      "Linux/Bash",
+      "Springboot",
       "RDBMS/SQL",
+      "Git",
       "Agile/Scrum",
-      "Git"
+      "Linux/Bash",
+      "Docker",
+      "MongoDB"
     ]
   },
-  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis a orci ac malesuada. Vivamus ligula elit, viverra eu ante porttitor, blandit convallis augue. Aliquam justo justo, mollis at lacus eu, rutrum finibus est. Vestibulum venenatis purus id accumsan pretium. In efficitur magna nec enim laoreet tincidunt. Ut libero metus, scelerisque nec eros vitae, sagittis pellentesque enim. Donec dictum felis volutpat, vehicula magna eu, imperdiet elit. Phasellus ut velit a massa efficitur faucibus. Sed volutpat, lacus sed sagittis luctus, elit."
+  "summary": "Passionate and detail-oriented software engineering graduate with hands-on experience in Java, Spring Boot, and RESTful API development. Built scalable full-stack applications, including a library management system, showcasing strong problem-solving and software engineering skills. Proficient in agile/scrum, data management, and concurrent programming, with a keen interest in optimizing performance and scalability. A fast learner who thrives in dynamic environments, eager to contribute to innovative software solutions. Excited to apply my skills in a collaborative, forward-thinking team."
 }

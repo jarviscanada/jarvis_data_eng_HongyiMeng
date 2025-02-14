@@ -53,7 +53,7 @@ jarvis_projects:
     git_url: "/core_java"
     description:
 #      - "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
-#      - "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "JDBC App: Created a Java application that interacts with data stored in a RDBMS using JDBC and DAO/DTO."
       - "Grep App: Developed a Java program to efficiently search for patterns in large text files using regular expressions. Implemented file I/O operations, using buffered readers to ensure minimal memory usage. Applied best practices in exception handling and logging. Packaged the application using Maven and distributed it as a Docker image."
   - name: "Springboot App"
     git_url: "/springboot"
@@ -84,11 +84,11 @@ highlighted_projects:
     git_url:
     description: Designed and implemented a Library Management System using Java and Spring Boot, enabling efficient book cataloging, user management, and loan tracking. Developed a RESTful API for seamless interactions between the frontend and backend. Integrated a relational database to keep record of the library's collections. Created a web-based view for catalog searching and user management, as well as an Android app for easy access.
   - name: "Mini C Compiler"
-      git_url:
-      description: Developed an compiler for a subset of C, written in Java. Compiles C code into MIPS assembly. Parsed C code into tokens following specifications from a grammar, analyzing program structure to ensure program validity. Implemented efficient register allocation using inference graphs and graph coloring algorithms.
+    git_url:
+    description: Developed an compiler for a subset of C, written in Java. Compiles C code into MIPS assembly. Parsed C code into tokens following specifications from a grammar, analyzing program structure to ensure program validity. Implemented efficient register allocation using inference graphs and graph coloring algorithms.
   - name: "Colored Cube Sorting Robot"
-      git_url:
-      description: Designed and programmed a Lego Mindstorms robot capable of sorting colored cubes by their color. Implemented an algorithm to identify the most likely color, using data from various sensors, with a 98% accuracy.
+    git_url:
+    description: Designed and programmed a Lego Mindstorms robot capable of sorting colored cubes by their color. Implemented an algorithm to identify the most likely color, using data from various sensors, with a 98% accuracy.
 
 #List of professional experience
 #The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).

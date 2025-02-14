@@ -1,64 +1,63 @@
 # Hong Yi Meng . Jarvis Consulting
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis a orci ac malesuada. Vivamus ligula elit, viverra eu ante porttitor, blandit convallis augue. Aliquam justo justo, mollis at lacus eu, rutrum finibus est. Vestibulum venenatis purus id accumsan pretium. In efficitur magna nec enim laoreet tincidunt. Ut libero metus, scelerisque nec eros vitae, sagittis pellentesque enim. Donec dictum felis volutpat, vehicula magna eu, imperdiet elit. Phasellus ut velit a massa efficitur faucibus. Sed volutpat, lacus sed sagittis luctus, elit.
+Passionate and detail-oriented software engineering graduate with hands-on experience in Java, Spring Boot, and RESTful API development. Built scalable full-stack applications, including a library management system, showcasing strong problem-solving and software engineering skills. Proficient in agile/scrum, data management, and concurrent programming, with a keen interest in optimizing performance and scalability. A fast learner who thrives in dynamic environments, eager to contribute to innovative software solutions. Excited to apply my skills in a collaborative, forward-thinking team.
 
 ## Skills
 
-**Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git
+**Proficient:** Java, Springboot, RDBMS/SQL, Git, Agile/Scrum, Linux/Bash, Docker, MongoDB
 
-**Competent:** Donec, fermentum, Donec, fermentum, Donec
+**Competent:** Python, Django, JavaScript/TypeScript, React.js, C/C++, Selenium
 
-**Familiar:** Donec, fermentum, fermentum, fermentum, fermentum
+**Familiar:** Jenkins, Angular, Android SDK, Redis, ActiveMQ, Swagger API, Hashicorp Vault
 
 ## Jarvis Projects
 
-Project source code: [https://github.com/jarviscanada/jarvis_data_eng_demo](https://github.com/jarviscanada/jarvis_data_eng_demo)
+Project source code: [https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/linux_sql)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/linux_sql)]: Authored bash scripts to collect system specification and real-time resource usage of Linux machines, using Grep, Awk, and Sed. Collected data are stored in a PostgreSQL Docker container instance.
 
-**Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/core_java)]:
+**RDBMS and SQL** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/sql)]: Designed SQL statements to perform various operations and queries over a SQL database, including queries leveraging joins, aggregate functions, and window functions.
+
+**Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/core_java)]:
       
-  - Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
+  - JDBC App: Created a Java application that interacts with data stored in a RDBMS using JDBC and DAO/DTO.
+  - Grep App: Developed a Java program to efficiently search for patterns in large text files using regular expressions. Implemented file I/O operations, using buffered readers to ensure minimal memory usage. Applied best practices in exception handling and logging. Packaged the application using Maven and distributed it as a Docker image.
 
-**Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/springboot)]: Not Started
+**Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/springboot)]: Not Started
 
-**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/python_data_anlytics)]: Not Started
+**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/python_data_anlytics)]: Not Started
 
-**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/hadoop)]: Not Started
+**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/hadoop)]: Not Started
 
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/spark)]: Not Started
+**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/spark)]: Not Started
 
-**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_demo/tree/master/cloud_devops)]: Not Started
+**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/cloud_devops)]: Not Started
 
 
 ## Highlighted Projects
-**Web app for resturant** [[GitHub](https://github.com/jarviscanada/jarvis_profile_builder)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**KnowKnot**: Designed and implemented a full-stack application that analyzes research papers from a database to identify similarities and connect researchers working on related topics. Gathered requirements from stakeholders, designed the system architecture and implemented the backend in Python, leveraging a pre-trained BERT model for topic classification. Integrated a RESTful API for seamless search functionality, allowing researchers to efficiently discover relevant work. Assisted in creating a graph to display author relationships visually in the Angular webapp. Worked in an agile/scrum environment, actively participating in sprint planning, daily stand-ups, backlog refinement and retrospectives.
 
-**Machine Learning**: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Library Management System**: Designed and implemented a Library Management System using Java and Spring Boot, enabling efficient book cataloging, user management, and loan tracking. Developed a RESTful API for seamless interactions between the frontend and backend. Integrated a relational database to keep record of the library's collections. Created a web-based view for catalog searching and user management, as well as an Android app for easy access.
+
+**Mini C Compiler**: Developed an compiler for a subset of C, written in Java. Compiles C code into MIPS assembly. Parsed C code into tokens following specifications from a grammar, analyzing program structure to ensure program validity. Implemented efficient register allocation using inference graphs and graph coloring algorithms.
+
+**Colored Cube Sorting Robot**: Designed and programmed a Lego Mindstorms robot capable of sorting colored cubes by their color. Implemented an algorithm to identify the most likely color, using data from various sensors, with a 98% accuracy.
 
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2020-present)**: Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.
+**Software Developer, Jarvis (2024-present)**: Implemented solutions for a variety of problems using Java, Maven, bash programming, SQL, using tools such as Docker and git. Created thorough unit tests with JUnit and Mockito to ensure program correctness.
 
-**Tutor, XYZ Company (2019)**: Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.
+**R&D Software Developer Intern, Flexspring (2023)**: Contributed to a client-facing application for the management of various company subscription services. Implemented a new feature for users to archive no longer needed subscriptions. Assisted in the migration of user data from a MongoDB database to a PostgreSQL database. Created a proof of concept for subscription creation designed for scalability.
 
 
 ## Education
-**XYZ university (2012-2016)**, Bachelor of Applied Sciences, Electrical and Computer Engineering
-- Scholarship
-- Dean's List (2015, 2016): Ut enim ad minim veniam
-- GPA: 3.8/4.0
+**McGill University (2020-2024)**, B. Eng. Software Engineering, Electrical and Computer Engineering
 
-**XYZ university (2016-2018)**, Master of Engineering, Electrical and Computer Engineering
+**Vanier College (2018-2020)**, DEC in Computer Science and Mathematics, Computer Science
 
 
 ## Miscellaneous
-- Udacity Machine Learning (2019)
-- Winner
-- Basketball player
-- Competitive gaming
-- Volunteer, ABC Food bank: Ut enim ad minim veniam
+- Runner
+- Volunteer, Atwater Library and Computer Centre: computer centre volunteer
