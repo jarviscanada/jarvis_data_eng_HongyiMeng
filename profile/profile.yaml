@@ -1,0 +1,128 @@
+# Preferred name (Characters only)
+name: "Hong Yi Meng"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: Passionate and detail-oriented software engineering graduate with hands-on experience in Java, Spring Boot, and RESTful API development. Built scalable full-stack applications, including a library management system, showcasing strong problem-solving and software engineering skills. Proficient in agile/scrum, data management, and concurrent programming, with a keen interest in optimizing performance and scalability. A fast learner who thrives in dynamic environments, eager to contribute to innovative software solutions. Excited to apply my skills in a collaborative, forward-thinking team.
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Springboot
+    - RDBMS/SQL
+    - Git
+    - Agile/Scrum
+    - Linux/Bash
+    - Docker
+    - MongoDB
+  # At least 5 skills
+  competent:
+    - Python
+    - Django
+    - JavaScript/TypeScript
+    - React.js
+    - C/C++
+    - Selenium
+  # At least 5 skills
+  familiar:
+    - Jenkins
+    - Angular
+    - Android SDK
+    - Redis
+    - ActiveMQ
+    - Swagger API
+    - Hashicorp Vault
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Authored bash scripts to collect system specification and real-time resource usage of Linux machines, using Grep, Awk, and Sed. Collected data are stored in a PostgreSQL Docker container instance.
+  - name: "RDBMS and SQL"
+    git_url: "/sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Designed SQL statements to perform various operations and queries over a SQL database, including queries leveraging joins, aggregate functions, and window functions.
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+#      - "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "JDBC App: Created a Java application that interacts with data stored in a RDBMS using JDBC and DAO/DTO."
+      - "Grep App: Developed a Java program to efficiently search for patterns in large text files using regular expressions. Implemented file I/O operations, using buffered readers to ensure minimal memory usage. Applied best practices in exception handling and logging. Packaged the application using Maven and distributed it as a Docker image."
+  - name: "Springboot App"
+    git_url: "/springboot"
+    description: ""
+  - name: "Python Data Analytics"
+    git_url: "/python_data_anlytics"
+    description: ""
+  - name: "Hadoop"
+    git_url: "/hadoop"
+    description: ""
+  - name: "Spark"
+    git_url: "/spark"
+    description: ""
+  - name: "Cloud/DevOps"
+    git_url: "/cloud_devops"
+    description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "KnowKnot"
+    #URL is optional
+    git_url:
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Designed and implemented a full-stack application that analyzes research papers from a database to identify similarities and connect researchers working on related topics. Gathered requirements from stakeholders, designed the system architecture and implemented the backend in Python, leveraging a pre-trained BERT model for topic classification. Integrated a RESTful API for seamless search functionality, allowing researchers to efficiently discover relevant work. Assisted in creating a graph to display author relationships visually in the Angular webapp. Worked in an agile/scrum environment, actively participating in sprint planning, daily stand-ups, backlog refinement and retrospectives.
+  - name: "Library Management System"
+    git_url:
+    description: Designed and implemented a Library Management System using Java and Spring Boot, enabling efficient book cataloging, user management, and loan tracking. Developed a RESTful API for seamless interactions between the frontend and backend. Integrated a relational database to keep record of the library's collections. Created a web-based view for catalog searching and user management, as well as an Android app for easy access.
+  - name: "Mini C Compiler"
+    git_url:
+    description: Developed an compiler for a subset of C, written in Java. Compiles C code into MIPS assembly. Parsed C code into tokens following specifications from a grammar, analyzing program structure to ensure program validity. Implemented efficient register allocation using inference graphs and graph coloring algorithms.
+  - name: "Colored Cube Sorting Robot"
+    git_url:
+    description: Designed and programmed a Lego Mindstorms robot capable of sorting colored cubes by their color. Implemented an algorithm to identify the most likely color, using data from various sensors, with a 98% accuracy.
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2024-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Implemented solutions for a variety of problems using Java, Maven, bash programming, SQL, using tools such as Docker and git. Created thorough unit tests with JUnit and Mockito to ensure program correctness."
+  - title: "R&D Software Developer Intern"
+    company: "Flexspring"
+    duration: "2023"
+    description: "Contributed to a client-facing application for the management of various company subscription services. Implemented a new feature for users to archive no longer needed subscriptions. Assisted in the migration of user data from a MongoDB database to a PostgreSQL database. Created a proof of concept for subscription creation designed for scalability."
+
+#List of edcuation
+education: 
+  - school_name: "McGill University"
+    duration: "2020-2024"
+    degree: "B. Eng. Software Engineering"
+    department: "Electrical and Computer Engineering"
+    # optional
+    awards_achievements:
+  - school_name: "Vanier College"
+    duration: "2018-2020"
+    degree: "DEC in Computer Science and Mathematics"
+    department: "Computer Science"
+    awards_achievements: 
+
+#Optional section
+others:
+    #category
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Runner"
+      - "Volunteer, Atwater Library and Computer Centre: computer centre volunteer"

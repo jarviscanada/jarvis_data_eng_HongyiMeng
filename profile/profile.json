@@ -1,0 +1,140 @@
+{
+  "education": [
+    {
+      "awards_achievements": null,
+      "degree": "B. Eng. Software Engineering",
+      "department": "Electrical and Computer Engineering",
+      "duration": "2020-2024",
+      "school_name": "McGill University"
+    },
+    {
+      "awards_achievements": null,
+      "degree": "DEC in Computer Science and Mathematics",
+      "department": "Computer Science",
+      "duration": "2018-2020",
+      "school_name": "Vanier College"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng",
+  "highlighted_projects": [
+    {
+      "description": "Designed and implemented a full-stack application that analyzes research papers from a database to identify similarities and connect researchers working on related topics. Gathered requirements from stakeholders, designed the system architecture and implemented the backend in Python, leveraging a pre-trained BERT model for topic classification. Integrated a RESTful API for seamless search functionality, allowing researchers to efficiently discover relevant work. Assisted in creating a graph to display author relationships visually in the Angular webapp. Worked in an agile/scrum environment, actively participating in sprint planning, daily stand-ups, backlog refinement and retrospectives.",
+      "git_url": null,
+      "name": "KnowKnot"
+    },
+    {
+      "description": "Designed and implemented a Library Management System using Java and Spring Boot, enabling efficient book cataloging, user management, and loan tracking. Developed a RESTful API for seamless interactions between the frontend and backend. Integrated a relational database to keep record of the library's collections. Created a web-based view for catalog searching and user management, as well as an Android app for easy access.",
+      "git_url": null,
+      "name": "Library Management System"
+    },
+    {
+      "description": "Developed an compiler for a subset of C, written in Java. Compiles C code into MIPS assembly. Parsed C code into tokens following specifications from a grammar, analyzing program structure to ensure program validity. Implemented efficient register allocation using inference graphs and graph coloring algorithms.",
+      "git_url": null,
+      "name": "Mini C Compiler"
+    },
+    {
+      "description": "Designed and programmed a Lego Mindstorms robot capable of sorting colored cubes by their color. Implemented an algorithm to identify the most likely color, using data from various sensors, with a 98% accuracy.",
+      "git_url": null,
+      "name": "Colored Cube Sorting Robot"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Authored bash scripts to collect system specification and real-time resource usage of Linux machines, using Grep, Awk, and Sed. Collected data are stored in a PostgreSQL Docker container instance.",
+      "git_url": "/linux_sql",
+      "name": "Cluster Monitor"
+    },
+    {
+      "description": "Designed SQL statements to perform various operations and queries over a SQL database, including queries leveraging joins, aggregate functions, and window functions.",
+      "git_url": "/sql",
+      "name": "RDBMS and SQL"
+    },
+    {
+      "description": [
+        "JDBC App: Created a Java application that interacts with data stored in a RDBMS using JDBC and DAO/DTO.",
+        "Grep App: Developed a Java program to efficiently search for patterns in large text files using regular expressions. Implemented file I/O operations, using buffered readers to ensure minimal memory usage. Applied best practices in exception handling and logging. Packaged the application using Maven and distributed it as a Docker image."
+      ],
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
+    },
+    {
+      "description": "",
+      "git_url": "/springboot",
+      "name": "Springboot App"
+    },
+    {
+      "description": "",
+      "git_url": "/python_data_anlytics",
+      "name": "Python Data Analytics"
+    },
+    {
+      "description": "",
+      "git_url": "/hadoop",
+      "name": "Hadoop"
+    },
+    {
+      "description": "",
+      "git_url": "/spark",
+      "name": "Spark"
+    },
+    {
+      "description": "",
+      "git_url": "/cloud_devops",
+      "name": "Cloud/DevOps"
+    }
+  ],
+  "name": "Hong Yi Meng",
+  "others": [
+    {
+      "bullets": [
+        "Runner",
+        "Volunteer, Atwater Library and Computer Centre: computer centre volunteer"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis",
+      "description": "Implemented solutions for a variety of problems using Java, Maven, bash programming, SQL, using tools such as Docker and git. Created thorough unit tests with JUnit and Mockito to ensure program correctness.",
+      "duration": "2024-present",
+      "title": "Software Developer"
+    },
+    {
+      "company": "Flexspring",
+      "description": "Contributed to a client-facing application for the management of various company subscription services. Implemented a new feature for users to archive no longer needed subscriptions. Assisted in the migration of user data from a MongoDB database to a PostgreSQL database. Created a proof of concept for subscription creation designed for scalability.",
+      "duration": "2023",
+      "title": "R\u0026D Software Developer Intern"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "Python",
+      "Django",
+      "JavaScript/TypeScript",
+      "React.js",
+      "C/C++",
+      "Selenium"
+    ],
+    "familiar": [
+      "Jenkins",
+      "Angular",
+      "Android SDK",
+      "Redis",
+      "ActiveMQ",
+      "Swagger API",
+      "Hashicorp Vault"
+    ],
+    "proficient": [
+      "Java",
+      "Springboot",
+      "RDBMS/SQL",
+      "Git",
+      "Agile/Scrum",
+      "Linux/Bash",
+      "Docker",
+      "MongoDB"
+    ]
+  },
+  "summary": "Passionate and detail-oriented software engineering graduate with hands-on experience in Java, Spring Boot, and RESTful API development. Built scalable full-stack applications, including a library management system, showcasing strong problem-solving and software engineering skills. Proficient in agile/scrum, data management, and concurrent programming, with a keen interest in optimizing performance and scalability. A fast learner who thrives in dynamic environments, eager to contribute to innovative software solutions. Excited to apply my skills in a collaborative, forward-thinking team."
+}
