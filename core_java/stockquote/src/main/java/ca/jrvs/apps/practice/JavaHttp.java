@@ -20,7 +20,6 @@ public class JavaHttp {
                 .build();
         try {
             HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {
