@@ -21,6 +21,11 @@ public class QuoteHttpHelper {
         this.client = client;
     }
 
+    public QuoteHttpHelper(OkHttpClient client, String apiKey) {
+        this.client = client;
+        this.apiKey = apiKey;
+    }
+
     /**
      * Fetch latest quote data from Alpha Vantage endpoint
      * @param symbol ticker symbol
@@ -37,6 +42,10 @@ public class QuoteHttpHelper {
 
         try (Response response = client.newCall(request).execute()) {
             wrapper = JsonParser.toObjectFromJson(response.body().string(), QuoteWrapper.class);
+            if(wrapper.getQuote() == null || wrapper.getQuote().getTicker() == null) {
+                LOGGER.error("Symbol {} does not exist", symbol);
+                throw new IllegalArgumentException("Error fetching data for symbol :" + symbol);
+            }
         } catch (IOException e) {
             System.out.println(e);
             LOGGER.error("Symbol {} does not exist", symbol);
