@@ -26,6 +26,7 @@ public class StockQuoteController {
      * User interface for our application
      */
     public void initClient() {
+        LOGGER.info("Init client");
         System.out.println("Welcome to Stock App");
         Scanner scanner = new Scanner(System.in);
         while(true) {
@@ -71,6 +72,7 @@ public class StockQuoteController {
     }
 
     private void displayPortfolio() {
+        LOGGER.info("Display portfolio info");
         System.out.println("Your Portfolio");
         System.out.println("==============");
         System.out.println("Symbol | Shares | Book Value | Market Value");
@@ -82,15 +84,17 @@ public class StockQuoteController {
             Optional<Quote> optionalQuote = quoteService.fetchQuoteDataFromAPI(position.getTicker());
             if (optionalQuote.isEmpty()) {
                 LOGGER.error("Could not fetch quote data for " + position.getTicker());
+            } else {
+                Quote currentQuote = optionalQuote.get();
+                System.out.println(position.getTicker() + " | " + position.getNumOfShares() + " | "
+                        + position.getValuePaid() + " | " + currentQuote.getPrice() * position.getNumOfShares());
             }
-            Quote currentQuote = optionalQuote.get();
-            System.out.println(position.getTicker() + " | " + position.getNumOfShares() + " | "
-                    + position.getValuePaid() + " | " + currentQuote.getPrice() * position.getNumOfShares());
         }
         System.out.println("==============");
     }
 
     private void displayStockData(String symbol) {
+        LOGGER.info("Display stock data for {}", symbol);
         Optional<Quote> optionalQuote = quoteService.fetchQuoteDataFromAPI(symbol);
         if(optionalQuote.isEmpty()) {
             System.out.println("No data for " + symbol);
@@ -113,6 +117,7 @@ public class StockQuoteController {
     }
 
     private void buyStock(String ticker, int numberOfShares) {
+        LOGGER.info("Buying {} {}", numberOfShares, ticker);
         Iterable<Position> positions = positionService.getAllPositions();
         for(Position position : positions) {
             if(position.getTicker().equals(ticker)) {
@@ -131,6 +136,7 @@ public class StockQuoteController {
     }
 
     private void sellStock(String symbol) {
+        LOGGER.info("Selling stock {}", symbol);
         Iterable<Position> positions = positionService.getAllPositions();
         for(Position position : positions) {
             if(position.getTicker().equals(symbol)) {

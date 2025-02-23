@@ -3,6 +3,7 @@ package ca.jrvs.apps.stockquote.dao;
 public class Position {
     private String ticker; //id
     private int numOfShares;
+    private double valuePaid; //total amount paid for shares
 
     public String getTicker() {
         return ticker;
@@ -28,5 +29,12 @@ public class Position {
         this.valuePaid = valuePaid;
     }
 
-    private double valuePaid; //total amount paid for shares
+    @Override
+    public String toString() {
+        return "Position{" +
+                "ticker='" + ticker + '\'' +
+                ", numOfShares=" + numOfShares +
+                ", valuePaid=" + valuePaid +
+                '}';
+    }
 }

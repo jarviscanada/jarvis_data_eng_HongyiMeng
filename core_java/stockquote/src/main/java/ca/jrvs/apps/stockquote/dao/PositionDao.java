@@ -1,5 +1,8 @@
 package ca.jrvs.apps.stockquote.dao;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,6 +13,7 @@ import java.util.Optional;
 
 public class PositionDao implements CrudDao<Position, String> {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(PositionDao.class);
     private static final String INSERT = "INSERT INTO position (symbol, number_of_shares, value_paid) VALUES (?, ?, ?);";
     private static final String UPDATE = "UPDATE position SET number_of_shares = ?, value_paid = ? WHERE symbol = ?;";
     private static final String SELECT_BY_ID = "SELECT symbol, number_of_shares, value_paid FROM position" +
@@ -26,6 +30,7 @@ public class PositionDao implements CrudDao<Position, String> {
 
     @Override
     public Position save(Position entity) throws IllegalArgumentException {
+        LOGGER.info("Saving position " + entity);
         Position position;
         Optional<Position> optionalPosition = findById(entity.getTicker());
         if(optionalPosition.isPresent()) {
@@ -37,6 +42,7 @@ public class PositionDao implements CrudDao<Position, String> {
     }
 
     private Position insert(Position entity) throws IllegalArgumentException {
+        System.out.println("Inserting new position");
         try (PreparedStatement statement = c.prepareStatement(INSERT)) {
             statement.setString(1, entity.getTicker());
             statement.setInt(2, entity.getNumOfShares());
@@ -44,12 +50,13 @@ public class PositionDao implements CrudDao<Position, String> {
             statement.execute();
             return findById(entity.getTicker()).orElse(null);
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
     }
 
     private Position update(Position entity) throws IllegalArgumentException {
+        LOGGER.info("Updating existing position");
         try (PreparedStatement statement = c.prepareStatement(UPDATE)) {
             statement.setInt(1, entity.getNumOfShares());
             statement.setDouble(2, entity.getValuePaid());
@@ -57,13 +64,14 @@ public class PositionDao implements CrudDao<Position, String> {
             statement.execute();
             return findById(entity.getTicker()).orElse(null);
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
     }
 
     @Override
     public Optional<Position> findById(String s) throws IllegalArgumentException {
+        LOGGER.info("Fetching position with id " + s);
         Position position = null;
         try(PreparedStatement statement = c.prepareStatement(SELECT_BY_ID)) {
             statement.setString(1, s);
@@ -75,7 +83,7 @@ public class PositionDao implements CrudDao<Position, String> {
                 position.setValuePaid(rs.getDouble("value_paid"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
         return Optional.ofNullable(position);
@@ -83,6 +91,7 @@ public class PositionDao implements CrudDao<Position, String> {
 
     @Override
     public Iterable<Position> findAll() {
+        LOGGER.info("Fetching all positions");
         List<Position> results = new ArrayList<>();
         try(PreparedStatement statement = c.prepareStatement(SELECT_ALL)) {
             ResultSet rs = statement.executeQuery();
@@ -94,7 +103,7 @@ public class PositionDao implements CrudDao<Position, String> {
                 results.add(position);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
         return results;
@@ -102,21 +111,23 @@ public class PositionDao implements CrudDao<Position, String> {
 
     @Override
     public void deleteById(String s) throws IllegalArgumentException {
+        LOGGER.info("Deleting position with id " + s);
         try(PreparedStatement statement = c.prepareStatement(DELETE)) {
             statement.setString(1, s);
             statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
     }
 
     @Override
     public void deleteAll() throws IllegalArgumentException {
+        LOGGER.info("Deleting all positions");
         try(PreparedStatement statement = c.prepareStatement(DELETE_ALL)) {
             statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
     }

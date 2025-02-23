@@ -114,7 +114,26 @@ public class Quote {
         return timestamp;
     }
 
+    @Override
+    public String toString() {
+        return "Quote{" +
+                "ticker='" + ticker + '\'' +
+                ", open=" + open +
+                ", high=" + high +
+                ", low=" + low +
+                ", price=" + price +
+                ", volume=" + volume +
+                ", latestTradingDay=" + latestTradingDay +
+                ", previousClose=" + previousClose +
+                ", change=" + change +
+                ", changePercent='" + changePercent + '\'' +
+                ", timestamp=" + timestamp +
+                '}';
+    }
+
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
+
+
 }
