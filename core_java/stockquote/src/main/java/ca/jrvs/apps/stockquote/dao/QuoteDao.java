@@ -1,5 +1,8 @@
 package ca.jrvs.apps.stockquote.dao;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +10,7 @@ import java.util.Optional;
 
 public class QuoteDao implements CrudDao<Quote, String> {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(QuoteDao.class);
     private static final String INSERT = "INSERT INTO quote (symbol, open, high, low, price, volume, " +
             "latest_trading_day, previous_close, change, change_percent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     private static final String UPDATE = "UPDATE quote SET open = ?, high = ?, low = ?, price = ?, " +
@@ -26,6 +30,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
 
     @Override
     public Quote save(Quote entity) throws IllegalArgumentException {
+        LOGGER.info("Saving quote: " + entity);
         Quote quote;
         Optional<Quote> optionalQuote = findById(entity.getTicker());
         if(optionalQuote.isPresent()) {
@@ -37,6 +42,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
     }
 
     private Quote insert(Quote entity) throws IllegalArgumentException {
+        LOGGER.info("Inserting new quote");
         Quote quote;
         try(PreparedStatement statement = c.prepareStatement(INSERT)) {
             statement.setString(1, entity.getTicker());
@@ -52,13 +58,14 @@ public class QuoteDao implements CrudDao<Quote, String> {
             statement.execute();
             quote = findById(entity.getTicker()).orElse(null);
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
         return quote;
     }
 
     private Quote update(Quote entity) throws IllegalArgumentException {
+        LOGGER.info("Updating existing quote");
         Quote quote;
         try(PreparedStatement statement = c.prepareStatement(UPDATE)) {
             statement.setDouble(1, entity.getOpen());
@@ -74,7 +81,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
             statement.executeUpdate();
             quote = findById(entity.getTicker()).orElse(null);
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
         return quote;
@@ -82,6 +89,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
 
     @Override
     public Optional<Quote> findById(String s) throws IllegalArgumentException {
+        LOGGER.info("Fetching quote with id " + s);
         Quote quote = null;
         try(PreparedStatement statement = c.prepareStatement(SELECT_BY_ID)) {
             statement.setString(1, s);
@@ -101,7 +109,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
                 quote.setTimestamp(rs.getTimestamp("timestamp"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
         return Optional.ofNullable(quote);
@@ -109,6 +117,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
 
     @Override
     public Iterable<Quote> findAll() {
+        LOGGER.info("Fetching all quotes");
         List<Quote> results = new ArrayList<>();
         try(PreparedStatement statement = c.prepareStatement(SELECT_ALL)) {
             ResultSet rs = statement.executeQuery();
@@ -128,7 +137,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
                 results.add(quote);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
         return results;
@@ -136,21 +145,23 @@ public class QuoteDao implements CrudDao<Quote, String> {
 
     @Override
     public void deleteById(String s) throws IllegalArgumentException {
+        LOGGER.info("Deleting quote with id " + s);
         try(PreparedStatement statement = c.prepareStatement(DELETE)) {
             statement.setString(1, s);
             statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
     }
 
     @Override
     public void deleteAll() throws IllegalArgumentException {
+        LOGGER.info("Deleting all quotes");
         try(PreparedStatement statement = c.prepareStatement(DELETE_ALL)) {
             statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
             throw new IllegalArgumentException(e);
         }
     }
