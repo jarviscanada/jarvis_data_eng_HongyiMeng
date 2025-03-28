@@ -51,6 +51,7 @@
     },
     {
       "description": [
+        "StockQuote App: Developped a Java console application to manage a portfolio of stocks. The application fetches the latest stock quotes using the AlphaVantage API and stores the data in a PostgreSQL database.",
         "JDBC App: Created a Java application that interacts with data stored in a RDBMS using JDBC and DAO/DTO.",
         "Grep App: Developed a Java program to efficiently search for patterns in large text files using regular expressions. Implemented file I/O operations, using buffered readers to ensure minimal memory usage. Applied best practices in exception handling and logging. Packaged the application using Maven and distributed it as a Docker image."
       ],
@@ -73,7 +74,7 @@
       "name": "Hadoop"
     },
     {
-      "description": "",
+      "description": "Completed various exercises and tutorials to learn Databricks and PySpark for big data processing and analytics.",
       "git_url": "/spark",
       "name": "Spark"
     },
@@ -96,7 +97,7 @@
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Implemented solutions for a variety of problems using Java, Maven, bash programming, SQL, using tools such as Docker and git. Created thorough unit tests with JUnit and Mockito to ensure program correctness.",
+      "description": "Implemented solutions for a variety of problems using Java, Maven, bash programming, SQL, Spark, using tools such as Docker and git. Created thorough unit tests with JUnit and Mockito to ensure program correctness.",
       "duration": "2024-present",
       "title": "Software Developer"
     },
@@ -114,6 +115,7 @@
       "JavaScript/TypeScript",
       "React.js",
       "C/C++",
+      "Databricks/PySpark",
       "Selenium"
     ],
     "familiar": [
@@ -133,7 +135,8 @@
       "Agile/Scrum",
       "Linux/Bash",
       "Docker",
-      "MongoDB"
+      "MongoDB",
+      "REST API"
     ]
   },
   "summary": "Passionate and detail-oriented software engineering graduate with hands-on experience in Java, Spring Boot, and RESTful API development. Built scalable full-stack applications, including a library management system, showcasing strong problem-solving and software engineering skills. Proficient in agile/scrum, data management, and concurrent programming, with a keen interest in optimizing performance and scalability. A fast learner who thrives in dynamic environments, eager to contribute to innovative software solutions. Excited to apply my skills in a collaborative, forward-thinking team."

@@ -4,9 +4,9 @@ Passionate and detail-oriented software engineering graduate with hands-on exper
 
 ## Skills
 
-**Proficient:** Java, Springboot, RDBMS/SQL, Git, Agile/Scrum, Linux/Bash, Docker, MongoDB
+**Proficient:** Java, Springboot, RDBMS/SQL, Git, Agile/Scrum, Linux/Bash, Docker, MongoDB, REST API
 
-**Competent:** Python, Django, JavaScript/TypeScript, React.js, C/C++, Selenium
+**Competent:** Python, Django, JavaScript/TypeScript, React.js, C/C++, Databricks/PySpark, Selenium
 
 **Familiar:** Jenkins, Angular, Android SDK, Redis, ActiveMQ, Swagger API, Hashicorp Vault
 
@@ -21,6 +21,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/core_java)]:
       
+  - StockQuote App: Developped a Java console application to manage a portfolio of stocks. The application fetches the latest stock quotes using the AlphaVantage API and stores the data in a PostgreSQL database.
   - JDBC App: Created a Java application that interacts with data stored in a RDBMS using JDBC and DAO/DTO.
   - Grep App: Developed a Java program to efficiently search for patterns in large text files using regular expressions. Implemented file I/O operations, using buffered readers to ensure minimal memory usage. Applied best practices in exception handling and logging. Packaged the application using Maven and distributed it as a Docker image.
 
@@ -30,7 +31,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng
 
 **Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/hadoop)]: Not Started
 
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/spark)]: Not Started
+**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/spark)]: Completed various exercises and tutorials to learn Databricks and PySpark for big data processing and analytics.
 
 **Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/cloud_devops)]: Not Started
 
@@ -47,7 +48,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2024-present)**: Implemented solutions for a variety of problems using Java, Maven, bash programming, SQL, using tools such as Docker and git. Created thorough unit tests with JUnit and Mockito to ensure program correctness.
+**Software Developer, Jarvis (2024-present)**: Implemented solutions for a variety of problems using Java, Maven, bash programming, SQL, Spark, using tools such as Docker and git. Created thorough unit tests with JUnit and Mockito to ensure program correctness.
 
 **R&D Software Developer Intern, Flexspring (2023)**: Contributed to a client-facing application for the management of various company subscription services. Implemented a new feature for users to archive no longer needed subscriptions. Assisted in the migration of user data from a MongoDB database to a PostgreSQL database. Created a proof of concept for subscription creation designed for scalability.
 

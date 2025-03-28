@@ -19,6 +19,7 @@ skills:
     - Linux/Bash
     - Docker
     - MongoDB
+    - REST API
   # At least 5 skills
   competent:
     - Python
@@ -26,6 +27,7 @@ skills:
     - JavaScript/TypeScript
     - React.js
     - C/C++
+    - Databricks/PySpark
     - Selenium
   # At least 5 skills
   familiar:
@@ -52,7 +54,7 @@ jarvis_projects:
   - name: "Core Java Apps"
     git_url: "/core_java"
     description:
-#      - "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "StockQuote App: Developped a Java console application to manage a portfolio of stocks. The application fetches the latest stock quotes using the AlphaVantage API and stores the data in a PostgreSQL database."
       - "JDBC App: Created a Java application that interacts with data stored in a RDBMS using JDBC and DAO/DTO."
       - "Grep App: Developed a Java program to efficiently search for patterns in large text files using regular expressions. Implemented file I/O operations, using buffered readers to ensure minimal memory usage. Applied best practices in exception handling and logging. Packaged the application using Maven and distributed it as a Docker image."
   - name: "Springboot App"
@@ -66,7 +68,7 @@ jarvis_projects:
     description: ""
   - name: "Spark"
     git_url: "/spark"
-    description: ""
+    description: "Completed various exercises and tutorials to learn Databricks and PySpark for big data processing and analytics."
   - name: "Cloud/DevOps"
     git_url: "/cloud_devops"
     description: ""
@@ -99,7 +101,7 @@ professional_experience:
     company: "Jarvis"
     duration: "2024-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: "Implemented solutions for a variety of problems using Java, Maven, bash programming, SQL, using tools such as Docker and git. Created thorough unit tests with JUnit and Mockito to ensure program correctness."
+    description: "Implemented solutions for a variety of problems using Java, Maven, bash programming, SQL, Spark, using tools such as Docker and git. Created thorough unit tests with JUnit and Mockito to ensure program correctness."
   - title: "R&D Software Developer Intern"
     company: "Flexspring"
     duration: "2023"
