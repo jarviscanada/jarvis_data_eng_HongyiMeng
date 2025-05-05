@@ -18,17 +18,17 @@
   "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng",
   "highlighted_projects": [
     {
-      "description": "Designed and implemented a full-stack application that analyzes research papers from a database to identify similarities and connect researchers working on related topics. Gathered requirements from stakeholders, designed the system architecture and implemented the backend in Python, leveraging a pre-trained BERT model for topic classification. Integrated a RESTful API for seamless search functionality, allowing researchers to efficiently discover relevant work. Assisted in creating a graph to display author relationships visually in the Angular webapp. Worked in an agile/scrum environment, actively participating in sprint planning, daily stand-ups, backlog refinement and retrospectives.",
+      "description": "Designed and implemented a full-stack application that analyzes research papers from a database to identify similarities and connect researchers working on related topics. Gathered requirements from stakeholders, designed the system architecture and implemented the backend in Python, leveraging a pre-trained BERT model for topic classification. Integrated a RESTful API for seamless search functionality, allowing researchers to efficiently discover relevant work. Assisted in creating a graph to display author relationships visually in the Angular web app. Worked in an agile/scrum environment, actively participating in sprint planning, daily stand-ups, backlog refinement and retrospectives.",
       "git_url": null,
       "name": "KnowKnot"
     },
     {
-      "description": "Designed and implemented a Library Management System using Java and Spring Boot, enabling efficient book cataloging, user management, and loan tracking. Developed a RESTful API for seamless interactions between the frontend and backend. Integrated a relational database to keep record of the library's collections. Created a web-based view for catalog searching and user management, as well as an Android app for easy access.",
+      "description": "Designed and implemented a Library Management System using Java and Spring Boot, enabling efficient book cataloging, user management, and loan tracking. Developed a RESTful API for seamless interactions between the frontend and backend. Integrated a relational database to keep a record of the library's collections. Created a web-based view for catalog searching and user management, as well as an Android app for easy access.",
       "git_url": null,
       "name": "Library Management System"
     },
     {
-      "description": "Developed an compiler for a subset of C, written in Java. Compiles C code into MIPS assembly. Parsed C code into tokens following specifications from a grammar, analyzing program structure to ensure program validity. Implemented efficient register allocation using inference graphs and graph coloring algorithms.",
+      "description": "Developed a compiler for a subset of C, written in Java. Compiles C code into MIPS assembly. Parsed C code into tokens following specifications from a grammar, analyzing program structure to ensure program validity. Implemented efficient register allocation using inference graphs and graph coloring algorithms.",
       "git_url": null,
       "name": "Mini C Compiler"
     },
@@ -51,7 +51,7 @@
     },
     {
       "description": [
-        "StockQuote App: Developped a Java console application to manage a portfolio of stocks. The application fetches the latest stock quotes using the AlphaVantage API and stores the data in a PostgreSQL database.",
+        "StockQuote App: Developed a Java console application to manage a portfolio of stocks. The application fetches the latest stock quotes using the AlphaVantage API and stores the data in a PostgreSQL database.",
         "JDBC App: Created a Java application that interacts with data stored in a RDBMS using JDBC and DAO/DTO.",
         "Grep App: Developed a Java program to efficiently search for patterns in large text files using regular expressions. Implemented file I/O operations, using buffered readers to ensure minimal memory usage. Applied best practices in exception handling and logging. Packaged the application using Maven and distributed it as a Docker image."
       ],
