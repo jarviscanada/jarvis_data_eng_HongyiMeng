@@ -29,6 +29,9 @@ skills:
     - C/C++
     - Databricks/PySpark
     - Selenium
+    - Hadoop
+    - Power BI
+    - Tableau
   # At least 5 skills
   familiar:
     - Jenkins
@@ -65,7 +68,7 @@ jarvis_projects:
     description: ""
   - name: "Hadoop"
     git_url: "/hadoop"
-    description: ""
+    description: "Performed ETL tasks and data analytics using Hadoop and HQL."
   - name: "Spark"
     git_url: "/spark"
     description: "Completed various exercises and tutorials to learn Databricks and PySpark for big data processing and analytics."
@@ -76,7 +79,7 @@ jarvis_projects:
 # List of personal or academic projects
 # Feel free to add more projects
 highlighted_projects:
-    #project name
+  #project name
   - name: "KnowKnot"
     #URL is optional
     git_url:
@@ -108,7 +111,7 @@ professional_experience:
     description: "Contributed to a client-facing application for the management of various company subscription services. Implemented a new feature for users to archive no longer needed subscriptions. Assisted in the migration of user data from a MongoDB database to a PostgreSQL database. Created a proof of concept for subscription creation designed for scalability."
 
 #List of edcuation
-education: 
+education:
   - school_name: "McGill University"
     duration: "2020-2024"
     degree: "B. Eng. Software Engineering"
@@ -119,12 +122,12 @@ education:
     duration: "2018-2020"
     degree: "DEC in Computer Science and Mathematics"
     department: "Computer Science"
-    awards_achievements: 
+    awards_achievements:
 
 #Optional section
 others:
-    #category
+  #category
   - title: "Activities/Hobbies"
     bullets:
-      - "Runner"
+      - "Running"
       - "Volunteer, Atwater Library and Computer Centre: computer centre volunteer"

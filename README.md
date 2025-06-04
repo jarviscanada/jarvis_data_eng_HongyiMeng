@@ -6,7 +6,7 @@ Passionate and detail-oriented software engineering graduate with hands-on exper
 
 **Proficient:** Java, Springboot, RDBMS/SQL, Git, Agile/Scrum, Linux/Bash, Docker, MongoDB, REST API
 
-**Competent:** Python, Django, JavaScript/TypeScript, React.js, C/C++, Databricks/PySpark, Selenium
+**Competent:** Python, Django, JavaScript/TypeScript, React.js, C/C++, Databricks/PySpark, Selenium, Hadoop, Power BI, Tableau
 
 **Familiar:** Jenkins, Angular, Android SDK, Redis, ActiveMQ, Swagger API, Hashicorp Vault
 
@@ -29,7 +29,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng
 
 **Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/python_data_anlytics)]: Not Started
 
-**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/hadoop)]: Not Started
+**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/hadoop)]: Performed ETL tasks and data analytics using Hadoop and HQL.
 
 **Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/spark)]: Completed various exercises and tutorials to learn Databricks and PySpark for big data processing and analytics.
 
@@ -60,5 +60,5 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng
 
 
 ## Miscellaneous
-- Runner
+- Running
 - Volunteer, Atwater Library and Computer Centre: computer centre volunteer
