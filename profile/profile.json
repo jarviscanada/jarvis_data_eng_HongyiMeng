@@ -69,7 +69,7 @@
       "name": "Python Data Analytics"
     },
     {
-      "description": "",
+      "description": "Performed ETL tasks and data analytics using Hadoop and HQL.",
       "git_url": "/hadoop",
       "name": "Hadoop"
     },
@@ -88,7 +88,7 @@
   "others": [
     {
       "bullets": [
-        "Runner",
+        "Running",
         "Volunteer, Atwater Library and Computer Centre: computer centre volunteer"
       ],
       "title": "Activities/Hobbies"
@@ -116,7 +116,10 @@
       "React.js",
       "C/C++",
       "Databricks/PySpark",
-      "Selenium"
+      "Selenium",
+      "Hadoop",
+      "Power BI",
+      "Tableau"
     ],
     "familiar": [
       "Jenkins",
