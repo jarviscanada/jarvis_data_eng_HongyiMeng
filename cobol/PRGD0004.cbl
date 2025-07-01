@@ -1,0 +1,157 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PRGD0004.
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+       SELECT STUDENTS-FILE ASSIGN TO "STUDENTS_INDEXED.DAT"
+        FILE STATUS IS FILE-CHECK-KEY
+        ORGANISATION IS INDEXED
+        ACCESS IS DYNAMIC
+        RECORD KEY IS STUDENT-ID
+        ALTERNATE RECORD KEY IS INCLUSION-DATE WITH DUPLICATES.
+       DATA DIVISION.
+       FILE SECTION.
+       FD STUDENTS-FILE.
+       01 STUDENT-DATA.
+           88 END-OF-FILE VALUE HIGH-VALUE.
+           05 STUDENT-ID PIC 9(4).
+           05 STUDENT-NAME PIC X(25).
+           05 STUDENT-BIRTHDAY PIC 9(8).
+           05 STUDENT-COURSE PIC X(15).
+           05 INCLUSION-DATE PIC 9(8).
+           05 UPDATE-DATE PIC 9(8).
+       WORKING-STORAGE SECTION.
+       01 WS-AREA.
+           05 FILE-CHECK-KEY PIC X(2).
+           05 TITLE.
+               10 TITLE-TOP PIC X(40)
+                VALUE "+--------------------------------------+".
+               10 TITLE-MIDDLE PIC X(40)
+                VALUE "|        DELETE STUDENT DETAILS        |".
+               10 TITLE-BOTTOM PIC X(40)
+                VALUE "+--------------------------------------+".
+           05 PROMPTS.
+               10 PROMPT-ID PIC X(34)
+                VALUE "ENTER STUDENT ID (MAX 4 DIGITS) >>".
+               10 PROMPT-DELETE-CONFIRMATION PIC X(49) VALUE
+                 "ARE YOU SURE TO DELETE THE ABOVE STUDENT(Y/N)? >>".
+           05 DETAIL-REPORT.
+            10 REPORT-SEPARATOR PIC X(91) VALUE "-----------------------
+      -        "--------------------------------------------------------
+      -        "------------".
+            10 REPORT-HEADER.
+               15 FILLER PIC X VALUE SPACES.
+               15 FILLER PIC X(2) VALUE "ID".
+               15 FILLER PIC X(3) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X(12) VALUE "STUDENT NAME".
+               15 FILLER PIC X(14) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X(8) VALUE "BIRTHDAY".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X(6) VALUE "COURSE".
+               15 FILLER PIC X(10) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X(11) VALUE "INSERT DATE".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X(11) VALUE "UPDATE DATE".
+               15 FILLER PIC X(1) VALUE SPACES.
+             10 REPORT-RECORD.
+               15 FILLER PIC X VALUE SPACES.
+               15 REPORT-STUDENT-ID PIC 9(4).
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 REPORT-STUDENT-NAME PIC X(25).
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 REPORT-STUDENT-BDAY PIC 9(8).
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 REPORT-COURSE PIC X(15).
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 REPORT-REC-INCLUSION-DATE PIC 9(8).
+               15 FILLER PIC X(4) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 REPORT-REC-UPDATE-DATE PIC 9(8).
+               15 FILLER PIC X(4) VALUE SPACES.
+               15 FILLER PIC X(4) VALUE SPACES.
+           05 WS-STUDENT-ID-TO-DELETE PIC 9(4).
+           05 WS-DELETE-CONFIRMATION PIC X.
+            88 CONFIRM-DELETE VALUES "Y", "y".
+            88 CANCEL-DELETE VALUES "N", "n".
+           05 DELETED-STUDENT-MSG PIC X(41)
+            VALUE "<<----- DELETED THE ABOVE STUDENT ----->>".
+           05 ABORT-DELETE-MESSAGE PIC X(40)
+            VALUE "<<----- DELETE OPERATION ABORTED ----->>".
+       PROCEDURE DIVISION.
+       0100-START.
+           OPEN I-O STUDENTS-FILE.
+           IF(FILE-CHECK-KEY NOT= "00")
+               DISPLAY "ERROR OPENING FILE, STATUS", FILE-CHECK-KEY
+               PERFORM 9000-END-PROGRAM
+           END-IF.
+           PERFORM 0200-DISPLAY-TITLE.
+           DISPLAY SPACES.
+           PERFORM 0300-PROMPT-ID-TO-DELETE.
+           PERFORM 0400-READ-STUDENT.
+           PERFORM 0500-DISPLAY-STUDENT-INFO.
+           PERFORM 0600-GET-DELETE-CONFIRMATION.
+           IF (CONFIRM-DELETE)
+               PERFORM 0700-DELETE-STUDENT
+           ELSE IF (CANCEL-DELETE)
+               DISPLAY ABORT-DELETE-MESSAGE
+           ELSE
+               DISPLAY "INVALID INPUT, DELETE ABORTED."
+           END-IF.
+           PERFORM 9000-END-PROGRAM.
+       0200-DISPLAY-TITLE.
+           DISPLAY TITLE-TOP.
+           DISPLAY TITLE-MIDDLE.
+           DISPLAY TITLE-BOTTOM.
+       0300-PROMPT-ID-TO-DELETE.
+           DISPLAY PROMPT-ID.
+           ACCEPT WS-STUDENT-ID-TO-DELETE.
+       0400-READ-STUDENT.
+           MOVE WS-STUDENT-ID-TO-DELETE TO STUDENT-ID.
+           READ STUDENTS-FILE
+            KEY IS STUDENT-ID
+            INVALID KEY DISPLAY "NO STUDENT WITH ID ", STUDENT-ID
+            PERFORM 9000-END-PROGRAM
+           END-READ.
+       0500-DISPLAY-STUDENT-INFO.
+           DISPLAY REPORT-SEPARATOR.
+           DISPLAY REPORT-HEADER.
+           DISPLAY REPORT-SEPARATOR.
+           MOVE STUDENT-ID TO REPORT-STUDENT-ID.
+           MOVE STUDENT-NAME TO REPORT-STUDENT-NAME.
+           MOVE STUDENT-BIRTHDAY TO REPORT-STUDENT-BDAY.
+           MOVE STUDENT-COURSE TO REPORT-COURSE.
+           MOVE INCLUSION-DATE TO REPORT-REC-INCLUSION-DATE.
+           MOVE UPDATE-DATE TO REPORT-REC-UPDATE-DATE.
+           DISPLAY REPORT-RECORD.
+           DISPLAY REPORT-SEPARATOR.
+       0600-GET-DELETE-CONFIRMATION.
+           DISPLAY PROMPT-DELETE-CONFIRMATION.
+           ACCEPT WS-DELETE-CONFIRMATION.
+       0700-DELETE-STUDENT.
+           DELETE STUDENTS-FILE
+            INVALID KEY DISPLAY "ERROR: INVALID ID ", STUDENT-ID
+           END-DELETE.
+           DISPLAY DELETED-STUDENT-MSG.
+       9000-END-PROGRAM.
+           CLOSE STUDENTS-FILE.
+           GOBACK.
+       END PROGRAM PRGD0004.

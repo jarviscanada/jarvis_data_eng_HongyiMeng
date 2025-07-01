@@ -1,0 +1,92 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PRGI0002.
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+       SELECT STUDENTS-FILE ASSIGN TO "STUDENTS_INDEXED.DAT"
+        FILE STATUS IS FILE-CHECK-KEY
+        ORGANISATION IS INDEXED
+        ACCESS IS DYNAMIC
+        RECORD KEY IS STUDENT-ID
+        ALTERNATE RECORD KEY IS INCLUSION-DATE WITH DUPLICATES.
+       DATA DIVISION.
+       FILE SECTION.
+       FD STUDENTS-FILE.
+       01 STUDENT-DATA.
+           88 END-OF-FILE VALUE HIGH-VALUE.
+           05 STUDENT-ID PIC 9(4).
+           05 STUDENT-NAME PIC X(25).
+           05 STUDENT-BIRTHDAY PIC 9(8).
+           05 STUDENT-COURSE PIC X(15).
+           05 INCLUSION-DATE PIC 9(8).
+           05 UPDATE-DATE PIC 9(8).
+       WORKING-STORAGE SECTION.
+       01 WS-AREA.
+           05 FILE-CHECK-KEY PIC X(2).
+           05 TITLE.
+               10 TITLE-TOP PIC X(38)
+                VALUE "+------------------------------------+".
+               10 TITLE-MIDDLE PIC X(38)
+                VALUE "|    A D D   N E W   S T U D E N T   |".
+               10 TITLE-BOTTOM PIC X(38)
+                VALUE "+------------------------------------+".
+            05 PROMPT-NAME PIC X(33)
+                VALUE "ENTER FULL NAME (MAX 25 CHARS) >>".
+            05 PROMPT-BDAY PIC X(28)
+                VALUE "ENTER BIRTHDAY (YYYYMMDD) >>".
+            05 PROMPT-COURSE PIC X(30)
+                VALUE "ENTER COURSE (MAX 15 CHARS) >>".
+            05 WS-NAME PIC X(25).
+            05 WS-BDAY PIC 9(8).
+            05 WS-COURSE PIC X(15).
+            05 WS-NEXT-ID PIC 9(4).
+            05  WS-CURRENT-DATE-FIELDS.
+             10  WS-CURRENT-DATE.
+              15  WS-CURRENT-YEAR    PIC  9(4).
+              15  WS-CURRENT-MONTH   PIC  9(2).
+              15  WS-CURRENT-DAY     PIC  9(2).
+             10  FILLER PIC X(12).
+       PROCEDURE DIVISION.
+       0001-START.
+            OPEN I-O STUDENTS-FILE.
+            IF(FILE-CHECK-KEY NOT= "00")
+                DISPLAY "ERROR OPENING FILE, STATUS", FILE-CHECK-KEY
+                PERFORM 9000-END-PROGRAM
+            END-IF.
+            INITIALISE WS-NEXT-ID.
+            READ STUDENTS-FILE
+             AT END SET END-OF-FILE TO TRUE
+            END-READ.
+            PERFORM 0200-ITER-FILE UNTIL END-OF-FILE.
+            ADD 1 TO WS-NEXT-ID.
+            DISPLAY TITLE-TOP.
+            DISPLAY TITLE-MIDDLE.
+            DISPLAY TITLE-BOTTOM.
+            DISPLAY PROMPT-NAME.
+            ACCEPT WS-NAME.
+            DISPLAY PROMPT-BDAY.
+            ACCEPT WS-BDAY.
+            DISPLAY PROMPT-COURSE.
+            ACCEPT WS-COURSE.
+            PERFORM 0300-INSERT-STUDENT.
+            PERFORM 9000-END-PROGRAM.
+       0200-ITER-FILE.
+            MOVE STUDENT-ID TO WS-NEXT-ID.
+            READ STUDENTS-FILE
+             AT END SET END-OF-FILE TO TRUE
+            END-READ.
+       0300-INSERT-STUDENT.
+           MOVE WS-NEXT-ID TO STUDENT-ID.
+           MOVE WS-NAME TO STUDENT-NAME.
+           MOVE WS-BDAY TO STUDENT-BIRTHDAY.
+           MOVE WS-COURSE TO STUDENT-COURSE.
+           MOVE FUNCTION CURRENT-DATE TO WS-CURRENT-DATE-FIELDS.
+           MOVE WS-CURRENT-DATE TO INCLUSION-DATE.
+           INITIALISE UPDATE-DATE.
+           WRITE STUDENT-DATA
+            INVALID KEY DISPLAY "INVALID STUDENT ID: ", STUDENT-ID
+           END-WRITE.
+       9000-END-PROGRAM.
+           CLOSE STUDENTS-FILE.
+            GOBACK.
+       END PROGRAM PRGI0002.

@@ -1,0 +1,191 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PRGU0003.
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+       SELECT STUDENTS-FILE ASSIGN TO "STUDENTS_INDEXED.DAT"
+        FILE STATUS IS FILE-CHECK-KEY
+        ORGANISATION IS INDEXED
+        ACCESS IS DYNAMIC
+        RECORD KEY IS STUDENT-ID
+        ALTERNATE RECORD KEY IS INCLUSION-DATE WITH DUPLICATES.
+       DATA DIVISION.
+       FILE SECTION.
+       FD STUDENTS-FILE.
+       01 STUDENT-DATA.
+           88 END-OF-FILE VALUE HIGH-VALUE.
+           05 STUDENT-ID PIC 9(4).
+           05 STUDENT-NAME PIC X(25).
+           05 STUDENT-BIRTHDAY PIC 9(8).
+           05 STUDENT-COURSE PIC X(15).
+           05 INCLUSION-DATE PIC 9(8).
+           05 UPDATE-DATE PIC 9(8).
+       WORKING-STORAGE SECTION.
+       01 WS-AREA.
+           05 FILE-CHECK-KEY PIC X(2).
+           05 TITLE.
+               10 TITLE-TOP PIC X(44)
+                VALUE "+------------------------------------------+".
+               10 TITLE-MIDDLE PIC X(44)
+                VALUE "|        U P D A T E   S T U D E N T       |".
+               10 TITLE-BOTTOM PIC X(44)
+                VALUE "+------------------------------------------+".
+           05 PROMPTS.
+            10 PROMPT-ID PIC X(31)
+               VALUE "ENTER THE 4 DIGIT STUDENT ID >>".
+            10 PROMPT-DETAILS PIC X(31)
+               VALUE "ENTER THE DETAILS TO BE CHANGED".
+            10 PROMPT-NAME PIC X(48)
+             VALUE "NEW STUDENT NAME(MAX 25 CHAR) - SPACE TO SKIP >>".
+            10 PROMPT-BDAY PIC X(43)
+               VALUE "NEW BIRTHDAY(YYYYMMDD)>> - SPACE TO SKIP >>".
+            10 PROMPT-COURSE PIC X(47)
+               VALUE "NEW COURSE NAME(MAX 15 CHAR) - SPACE TO SKIP >>".
+           05 DETAIL-REPORT.
+            10 PREVIEW-REPORT-TITLE PIC X(31)
+               VALUE "<--- STUDENT TO BE UPDATED --->".
+            10 UPDATED-REPORT-TITLE PIC X(36)
+               VALUE "<---- UPDATED STUDENT DETAILS ----->".
+            10 REPORT-SEPARATOR PIC X(91) VALUE "-----------------------
+      -        "--------------------------------------------------------
+      -        "------------".
+            10 REPORT-HEADER.
+               15 FILLER PIC X VALUE SPACES.
+               15 FILLER PIC X(2) VALUE "ID".
+               15 FILLER PIC X(3) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X(12) VALUE "STUDENT NAME".
+               15 FILLER PIC X(14) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X(8) VALUE "BIRTHDAY".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X(6) VALUE "COURSE".
+               15 FILLER PIC X(10) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X(11) VALUE "INSERT DATE".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X(11) VALUE "UPDATE DATE".
+               15 FILLER PIC X(1) VALUE SPACES.
+             10 REPORT-RECORD.
+               15 FILLER PIC X VALUE SPACES.
+               15 REPORT-STUDENT-ID PIC 9(4).
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 REPORT-STUDENT-NAME PIC X(25).
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 REPORT-STUDENT-BDAY PIC 9(8).
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 REPORT-COURSE PIC X(15).
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 REPORT-REC-INCLUSION-DATE PIC 9(8).
+               15 FILLER PIC X(4) VALUE SPACES.
+               15 FILLER PIC X VALUE "|".
+               15 FILLER PIC X(1) VALUE SPACES.
+               15 REPORT-REC-UPDATE-DATE PIC 9(8).
+               15 FILLER PIC X(4) VALUE SPACES.
+               15 FILLER PIC X(4) VALUE SPACES.
+
+           05 WS-INPUT-VALUE PIC X(20).
+           05  WS-CURRENT-DATE-FIELDS.
+            10  WS-CURRENT-DATE.
+             15  WS-CURRENT-YEAR    PIC  9(4).
+             15  WS-CURRENT-MONTH   PIC  9(2).
+             15  WS-CURRENT-DAY     PIC  9(2).
+            10  FILLER PIC X(12).
+       PROCEDURE DIVISION.
+       0001-START.
+            OPEN I-O STUDENTS-FILE.
+            IF(FILE-CHECK-KEY NOT= "00")
+                DISPLAY "ERROR OPENING FILE, STATUS", FILE-CHECK-KEY
+                PERFORM 9000-END-PROGRAM
+            END-IF.
+            PERFORM 0200-PRINT-TITLE.
+            PERFORM 0300-GET-ID-TO-UPDATE.
+            DISPLAY SPACES.
+            PERFORM 0400-DISPLAY-PREVIEW.
+            DISPLAY SPACES.
+            PERFORM 0500-GET-DETAILS.
+            PERFORM 1000-UPDATE-DATE.
+            PERFORM 0600-UPDATE-STUDENT.
+            DISPLAY SPACES.
+            PERFORM 0700-DISPLAY-UPDATED-STUDENT.
+            PERFORM 9000-END-PROGRAM.
+       0200-PRINT-TITLE.
+           DISPLAY TITLE-TOP.
+           DISPLAY TITLE-MIDDLE.
+           DISPLAY TITLE-BOTTOM.
+       0300-GET-ID-TO-UPDATE.
+           DISPLAY PROMPT-ID.
+           ACCEPT STUDENT-ID.
+       0400-DISPLAY-PREVIEW.
+           PERFORM 0800-READ-STUDENT.
+           DISPLAY PREVIEW-REPORT-TITLE.
+           PERFORM 0900-DISPLAY-REPORT.
+       0500-GET-DETAILS.
+           DISPLAY PROMPT-DETAILS.
+           PERFORM 0510-GET-NEW-NAME THRU 0530-GET-NEW-COURSE.
+       0510-GET-NEW-NAME.
+           DISPLAY PROMPT-NAME.
+           ACCEPT WS-INPUT-VALUE.
+           IF (WS-INPUT-VALUE NOT= SPACE)
+               MOVE WS-INPUT-VALUE TO STUDENT-NAME
+           END-IF.
+       0520-GET-NEW-BDAY.
+           DISPLAY PROMPT-BDAY.
+           ACCEPT WS-INPUT-VALUE.
+           IF (WS-INPUT-VALUE NOT= SPACE)
+               MOVE WS-INPUT-VALUE TO STUDENT-BIRTHDAY
+           END-IF.
+       0530-GET-NEW-COURSE.
+           DISPLAY PROMPT-COURSE.
+           ACCEPT WS-INPUT-VALUE.
+           IF (WS-INPUT-VALUE NOT= SPACE)
+               MOVE WS-INPUT-VALUE TO STUDENT-COURSE
+           END-IF.
+       0600-UPDATE-STUDENT.
+           REWRITE STUDENT-DATA
+           END-REWRITE.
+       0700-DISPLAY-UPDATED-STUDENT.
+           PERFORM 0800-READ-STUDENT.
+           DISPLAY UPDATED-REPORT-TITLE.
+           PERFORM 0900-DISPLAY-REPORT.
+       0800-READ-STUDENT.
+           READ STUDENTS-FILE
+            KEY IS STUDENT-ID
+            INVALID KEY DISPLAY "COULD NOT FIND STUDENT WITH ID ",
+             STUDENT-ID, ". STATUS: ", FILE-CHECK-KEY
+            PERFORM 9000-END-PROGRAM
+           END-READ.
+       0900-DISPLAY-REPORT.
+           DISPLAY REPORT-SEPARATOR.
+           DISPLAY REPORT-HEADER.
+           DISPLAY REPORT-SEPARATOR.
+           MOVE STUDENT-ID TO REPORT-STUDENT-ID.
+           MOVE STUDENT-NAME TO REPORT-STUDENT-NAME.
+           MOVE STUDENT-BIRTHDAY TO REPORT-STUDENT-BDAY.
+           MOVE STUDENT-COURSE TO REPORT-COURSE.
+           MOVE INCLUSION-DATE TO REPORT-REC-INCLUSION-DATE.
+           MOVE UPDATE-DATE TO REPORT-REC-UPDATE-DATE.
+           DISPLAY REPORT-RECORD.
+           DISPLAY REPORT-SEPARATOR.
+       1000-UPDATE-DATE.
+           MOVE FUNCTION CURRENT-DATE TO WS-CURRENT-DATE-FIELDS.
+           MOVE WS-CURRENT-DATE TO UPDATE-DATE.
+       9000-END-PROGRAM.
+           CLOSE STUDENTS-FILE.
+            GOBACK.
+       END PROGRAM PRGU0003.
