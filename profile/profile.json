@@ -64,8 +64,13 @@
       "name": "Springboot App"
     },
     {
+      "description": "Created a COBOL student management system. The program provides a menu giving the user options to display, add, query, modify and delete student records. Additionally the user can generate a report from student data. Student data is stored within an indexed VSAM file.",
+      "git_url": "/cobol",
+      "name": "COBOL Student Management System"
+    },
+    {
       "description": "",
-      "git_url": "/python_data_anlytics",
+      "git_url": "/python_data_analytics",
       "name": "Python Data Analytics"
     },
     {
@@ -115,6 +120,9 @@
       "JavaScript/TypeScript",
       "React.js",
       "C/C++",
+      "COBOL",
+      "ISPF/TSO",
+      "JCL",
       "Databricks/PySpark",
       "Selenium",
       "Hadoop",
