@@ -6,7 +6,7 @@ Passionate and detail-oriented software engineering graduate with hands-on exper
 
 **Proficient:** Java, Springboot, RDBMS/SQL, Git, Agile/Scrum, Linux/Bash, Docker, MongoDB, REST API
 
-**Competent:** Python, Django, JavaScript/TypeScript, React.js, C/C++, Databricks/PySpark, Selenium, Hadoop, Power BI, Tableau
+**Competent:** Python, Django, JavaScript/TypeScript, React.js, C/C++, COBOL, ISPF/TSO, JCL, Databricks/PySpark, Selenium, Hadoop, Power BI, Tableau
 
 **Familiar:** Jenkins, Angular, Android SDK, Redis, ActiveMQ, Swagger API, Hashicorp Vault
 
@@ -27,7 +27,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng
 
 **Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/springboot)]: Not Started
 
-**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/python_data_anlytics)]: Not Started
+**COBOL Student Management System** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/cobol)]: Created a COBOL student management system. The program provides a menu giving the user options to display, add, query, modify and delete student records. Additionally the user can generate a report from student data. Student data is stored within an indexed VSAM file.
+
+**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/python_data_analytics)]: Not Started
 
 **Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/hadoop)]: Performed ETL tasks and data analytics using Hadoop and HQL.
 
