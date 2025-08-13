@@ -6,7 +6,7 @@ Passionate and detail-oriented software engineering graduate with hands-on exper
 
 **Proficient:** Java, Springboot, RDBMS/SQL, Git, Agile/Scrum, Linux/Bash, Docker, MongoDB, REST API
 
-**Competent:** Python, Django, JavaScript/TypeScript, React.js, C/C++, COBOL, ISPF/TSO, JCL, Databricks/PySpark, Selenium, Hadoop, Power BI, Tableau
+**Competent:** Python, Django, JavaScript/TypeScript, React.js, C/C++, COBOL, ISPF/TSO, JCL, DB2, Databricks/PySpark, Selenium, Hadoop, Power BI, Tableau
 
 **Familiar:** Jenkins, Angular, Android SDK, Redis, ActiveMQ, Swagger API, Hashicorp Vault
 
