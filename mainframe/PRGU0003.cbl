@@ -1,0 +1,75 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PRGU0003.
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT UPDFILE ASSIGN TO "UPDFILE"
+               FILE STATUS IS FILE-CHECK-KEY
+               ORGANIZATION IS SEQUENTIAL.
+           SELECT LOGFILE ASSIGN TO "LOGFILE"
+               ORGANIZATION IS SEQUENTIAL.
+       DATA DIVISION.
+       FILE SECTION.
+       FD UPDFILE
+           DATA RECORD IS STUDENT-RECORD.
+       COPY STUDREC.
+       FD LOGFILE.
+       01 LOG-DATA.
+           05 LOG-LINE PIC X(80).
+       WORKING-STORAGE SECTION.
+           EXEC SQL
+               INCLUDE SQLCA
+           END-EXEC.
+           EXEC SQL
+               INCLUDE TSTUDENT
+           END-EXEC.
+       01 WS-WORK-AREAS.
+           05 FILE-CHECK-KEY PIC X(2).
+           05 WS-CURRENT-DATE-FIELDS.
+             10 WS-CURRENT-DATE PIC X(8).
+             10 FILLER PIC X(12).
+           05 WS-STUDENT.
+               10 WS-RID PIC X(4).
+               10 WS-RNAME PIC X(25).
+               10 WS-RDOB PIC X(8).
+               10 WS-RCOURSE PIC X(15).
+       PROCEDURE DIVISION.
+       0100-START.
+           OPEN INPUT UPDFILE.
+           IF (FILE-CHECK-KEY NOT = "00")
+               DISPLAY "ERROR OPENING DATA FILE, CODE: ",
+               FILE-CHECK-KEY
+               MOVE FILE-CHECK-KEY TO RETURN-CODE
+               PERFORM 9000-END-PROGRAM
+           END-IF.
+           MOVE FUNCTION CURRENT-DATE TO WS-CURRENT-DATE-FIELDS.
+           PERFORM 0200-PROCESS-INPUT.
+           PERFORM 9000-END-PROGRAM.
+       0200-PROCESS-INPUT.
+           PERFORM 0400-READ-NEXT.
+           PERFORM 0300-UPDATE-RECORD UNTIL ENDOFFILE.
+       0300-UPDATE-RECORD.
+           EXEC SQL
+               UPDATE TSTUDENT
+                   SET STUD_NAME = :WS-RNAME, STUD_DOB = :WS-RDOB,
+                       STUD_COURSE = :WS-RCOURSE,
+                       STUD_UPDT_DATE = :WS-CURRENT-DATE
+                   WHERE STUD_ID = :WS-RID
+           END-EXEC.
+           IF SQLCODE NOT EQUAL +0
+               DISPLAY "ERROR UPDATING ID: ", WS-RID,
+                   ", CODE: ",  SQLCODE
+           END-IF.
+           PERFORM 0400-READ-NEXT.
+       0400-READ-NEXT.
+           READ UPDFILE
+               AT END SET ENDOFFILE TO TRUE
+           END-READ.
+           MOVE RSTUD-ID TO WS-RID.
+           MOVE RSTUD-NAME TO WS-RNAME.
+           MOVE RSTUD-DOB TO WS-RDOB.
+           MOVE RSTUD-COURSE TO WS-RCOURSE.
+       9000-END-PROGRAM.
+           CLOSE UPDFILE.
+           STOP RUN.
+       END PROGRAM PRGU0003.

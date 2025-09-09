@@ -1,0 +1,9 @@
+       01 STUDENT-RECORD.
+           88 ENDOFFILE VALUE HIGH-VALUE.
+           05 RSTUD-OP-CODE PIC X.
+           05 RSTUD-ID PIC X(4).
+           05 RSTUD-NAME PIC X(25).
+           05 RSTUD-DOB PIC X(8).
+           05 RSTUD-COURSE PIC X(15).
+           05 RSTUD-INS-DATE PIC X(8).
+           05 RSTUD-UPDT-DATE PIC X(8).
