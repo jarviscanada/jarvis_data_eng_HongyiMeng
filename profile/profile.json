@@ -69,7 +69,7 @@
       "name": "COBOL Student Management System"
     },
     {
-      "description": "Wrote COBOL programs and JCL scripts to batch insert, update, and delete students from a DB2 database.",
+      "description": "Wrote COBOL programs and JCL scripts to batch insert, update, and delete students from a DB2 database. Used TSO and ISPF to connect to the mainframe interface and manipulate datasets on the machine. Learned about the commonly used dataset utilities.",
       "git_url": "/mainframe",
       "name": "Student Management Batch Programs"
     },

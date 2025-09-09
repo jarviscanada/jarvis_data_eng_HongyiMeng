@@ -29,7 +29,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng
 
 **COBOL Student Management System** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/cobol)]: Created a COBOL student management system. The program provides a menu giving the user options to display, add, query, modify and delete student records. Additionally the user can generate a report from student data. Student data is stored within an indexed VSAM file.
 
-**Student Management Batch Programs** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/mainframe)]: Wrote COBOL programs and JCL scripts to batch insert, update, and delete students from a DB2 database.
+**Student Management Batch Programs** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/mainframe)]: Wrote COBOL programs and JCL scripts to batch insert, update, and delete students from a DB2 database. Used TSO and ISPF to connect to the mainframe interface and manipulate datasets on the machine. Learned about the commonly used dataset utilities.
 
 **Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/python_data_analytics)]: Not Started
 
