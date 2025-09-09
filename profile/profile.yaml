@@ -31,6 +31,7 @@ skills:
     - ISPF/TSO
     - JCL
     - DB2
+    - Kubernetes
     - Databricks/PySpark
     - Selenium
     - Hadoop
@@ -84,7 +85,7 @@ jarvis_projects:
     description: "Completed various exercises and tutorials to learn Databricks and PySpark for big data processing and analytics."
   - name: "Cloud/DevOps"
     git_url: "/cloud_devops"
-    description: ""
+    description: "Learned concepts in cloud, networking, and DevOps. Deployed an application with Kubernetes."
 
 # List of personal or academic projects
 # Feel free to add more projects
