@@ -6,7 +6,7 @@ Passionate and detail-oriented software engineering graduate with hands-on exper
 
 **Proficient:** Java, Springboot, RDBMS/SQL, Git, Agile/Scrum, Linux/Bash, Docker, MongoDB, REST API
 
-**Competent:** Python, Django, JavaScript/TypeScript, React.js, C/C++, COBOL, ISPF/TSO, JCL, DB2, Databricks/PySpark, Selenium, Hadoop, Power BI, Tableau
+**Competent:** Python, Django, JavaScript/TypeScript, React.js, C/C++, COBOL, ISPF/TSO, JCL, DB2, Kubernetes, Databricks/PySpark, Selenium, Hadoop, Power BI, Tableau
 
 **Familiar:** Jenkins, Angular, Android SDK, Redis, ActiveMQ, Swagger API, Hashicorp Vault
 
@@ -37,7 +37,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng
 
 **Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/spark)]: Completed various exercises and tutorials to learn Databricks and PySpark for big data processing and analytics.
 
-**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/cloud_devops)]: Not Started
+**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_HongyiMeng/tree/master/cloud_devops)]: Learned concepts in cloud, networking, and DevOps. Deployed an application with Kubernetes.
 
 
 ## Highlighted Projects

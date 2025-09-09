@@ -89,7 +89,7 @@
       "name": "Spark"
     },
     {
-      "description": "",
+      "description": "Learned concepts in cloud, networking, and DevOps. Deployed an application with Kubernetes.",
       "git_url": "/cloud_devops",
       "name": "Cloud/DevOps"
     }
@@ -129,6 +129,7 @@
       "ISPF/TSO",
       "JCL",
       "DB2",
+      "Kubernetes",
       "Databricks/PySpark",
       "Selenium",
       "Hadoop",
