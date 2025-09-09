@@ -34,7 +34,6 @@ function get_profile_name() {
   echo "---- Parsing metadat ----"
   profile_name=$(docker run -it --rm -v "${PWD}":/workdir mikefarah/yq:3.3.4 yq r profile.yaml name  | xargs | tr -d '\r' | sed -e 's/ /_/g')
   profile_prefix=jarvis_profile_${profile_name}
-  echo ${profile_name}
   check_status $?
 }
 

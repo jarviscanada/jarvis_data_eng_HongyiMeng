@@ -72,7 +72,7 @@ jarvis_projects:
     description: "Created a COBOL student management system. The program provides a menu giving the user options to display, add, query, modify and delete student records. Additionally the user can generate a report from student data. Student data is stored within an indexed VSAM file."
   - name: "Student Management Batch Programs"
     git_url: "/mainframe"
-    description: "Wrote COBOL programs and JCL scripts to batch insert, update, and delete students from a DB2 database."
+    description: "Wrote COBOL programs and JCL scripts to batch insert, update, and delete students from a DB2 database. Used TSO and ISPF to connect to the mainframe interface and manipulate datasets on the machine. Learned about the commonly used dataset utilities."
   - name: "Python Data Analytics"
     git_url: "/python_data_analytics"
     description: ""
