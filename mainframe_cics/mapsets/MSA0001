@@ -1,0 +1,116 @@
+MSA0001  DFHMSD TYPE=&SYSPARM,MODE=INOUT,CTRL=FREEKB,                  X
+               LANG=COBOL,TIOAPFX=YES,                                 X
+               DSATTS=(COLOR,HILIGHT),                                 X
+               MAPATTS=(COLOR,HILIGHT),                                X
+               STORAGE=AUTO
+***********************************************************************
+MPA0001  DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+***********************************************************************
+** TRANSACTION
+***********************************************************************
+         DFHMDF POS=(1,1),LENGTH=5,ATTRB=PROT,                         X
+               COLOR=TURQUOISE,INITIAL='TRAN:'
+TRANSID  DFHMDF POS=(1,7),LENGTH=4,ATTRB=PROT,                         X
+               COLOR=NEUTRAL
+***********************************************************************
+** PROGRAM
+***********************************************************************
+         DFHMDF POS=(2,1),LENGTH=5,ATTRB=PROT,                         X
+               COLOR=TURQUOISE,INITIAL='PROG:'
+PROGNM   DFHMDF POS=(2,7),LENGTH=8,ATTRB=PROT,                         X
+               COLOR=NEUTRAL
+***********************************************************************
+** DATE
+***********************************************************************
+         DFHMDF POS=(1,63),LENGTH=5,ATTRB=PROT,                        X
+               COLOR=TURQUOISE,INITIAL='DATE:'
+CURDATE  DFHMDF POS=(1,69),LENGTH=10,ATTRB=PROT,                       X
+               COLOR=NEUTRAL
+***********************************************************************
+** TIME
+***********************************************************************
+         DFHMDF POS=(2,63),LENGTH=5,ATTRB=PROT,                        X
+               COLOR=TURQUOISE,INITIAL='TIME:'
+CURTIME  DFHMDF POS=(2,69),LENGTH=8,ATTRB=PROT,                        X
+               COLOR=NEUTRAL
+***********************************************************************
+** APPLICATION NAME
+***********************************************************************
+         DFHMDF POS=(1,28),LENGTH=25,ATTRB=PROT,                       X
+               COLOR=BLUE,INITIAL='STUDENT MANAGEMENT SYSTEM'
+***********************************************************************
+** VERSION
+***********************************************************************
+         DFHMDF POS=(2,36),LENGTH=9,ATTRB=PROT,                        X
+               COLOR=NEUTRAL,INITIAL='VER 01.00'
+***********************************************************************
+** TITLE
+***********************************************************************
+         DFHMDF POS=(6,22),LENGTH=39,ATTRB=PROT,                       X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='+-------------------------------------+'
+         DFHMDF POS=(7,22),LENGTH=39,ATTRB=PROT,                       X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='|    A D D   N E W   S T U D E N T    |'
+         DFHMDF POS=(8,22),LENGTH=39,ATTRB=PROT,                       X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='+-------------------------------------+'
+***********************************************************************
+** LAST NAME
+***********************************************************************
+         DFHMDF POS=(13,25),LENGTH=10,ATTRB=PROT,                      X
+               COLOR=YELLOW,                                           X
+               INITIAL='Last Name:'
+LNAME    DFHMDF POS=(13,36),LENGTH=12,ATTRB=(UNPROT,IC),               X
+               COLOR=NEUTRAL,HILIGHT=UNDERLINE
+         DFHMDF POS=(13,49),LENGTH=1,ATTRB=ASKIP                      
+***********************************************************************
+** FIRST NAME
+***********************************************************************
+         DFHMDF POS=(14,24),LENGTH=11,ATTRB=PROT,                      X
+               COLOR=YELLOW,                                           X
+               INITIAL='First Name:'
+FNAME    DFHMDF POS=(14,36),LENGTH=12,ATTRB=UNPROT,                    X
+               COLOR=NEUTRAL,HILIGHT=UNDERLINE
+         DFHMDF POS=(14,49),LENGTH=1,ATTRB=ASKIP                      
+***********************************************************************
+** BIRTHDAY
+***********************************************************************
+         DFHMDF POS=(15,26),LENGTH=9,ATTRB=PROT,                       X
+               COLOR=YELLOW,                                           X
+               INITIAL='Birthday:'
+BDAY     DFHMDF POS=(15,36),LENGTH=10,ATTRB=UNPROT,                    X
+               COLOR=NEUTRAL,HILIGHT=UNDERLINE
+         DFHMDF POS=(15,47),LENGTH=13,ATTRB=ASKIP,                     X
+               COLOR=YELLOW,                                           X
+               INITIAL=' (mm/dd/yyyy)'
+***********************************************************************
+** COURSE
+***********************************************************************
+         DFHMDF POS=(16,28),LENGTH=7,ATTRB=PROT,                       X
+               COLOR=YELLOW,                                           X
+               INITIAL='Course:'
+COURSE   DFHMDF POS=(16,36),LENGTH=12,ATTRB=UNPROT,                    X
+               COLOR=NEUTRAL,HILIGHT=UNDERLINE
+         DFHMDF POS=(16,49),LENGTH=1,ATTRB=ASKIP    
+***********************************************************************
+** MESSAGE
+***********************************************************************
+MSG      DFHMDF POS=(22,2),LENGTH=78,ATTRB=PROT,                       X
+               COLOR=YELLOW 
+         DFHMDF POS=(22,80),LENGTH=0,ATTRB=ASKIP   
+***********************************************************************
+** COMMANDS
+***********************************************************************
+         DFHMDF POS=(24,2),LENGTH=13,ATTRB=PROT,                       X
+               COLOR=BLUE,                                             X
+               INITIAL='ENTER=Process'
+         DFHMDF POS=(24,20),LENGTH=7,ATTRB=PROT,                       X
+               COLOR=BLUE,                                             X
+               INITIAL='F1=Help'
+         DFHMDF POS=(24,32),LENGTH=7,ATTRB=PROT,                       X
+               COLOR=BLUE,                                             X
+               INITIAL='F3=Back'
+***********************************************************************
+         DFHMSD TYPE=FINAL
+         END
