@@ -42,7 +42,7 @@
       -        "-----".
            05 REPORT-TITLE.
                10 FILLER PIC X(32) VALUE SPACES.
-               10 FILLER PIC X(23) VALUE "NEWLY UPDATED STUDENTS".
+               10 FILLER PIC X(23) VALUE "STUDENTS BY INSERT DATE".
                10 FILLER PIC X(36) VALUE SPACES.
            05 REPORT-HEADER.
                10 FILLER PIC X VALUE SPACES.
